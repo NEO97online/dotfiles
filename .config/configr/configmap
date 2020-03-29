@@ -1,0 +1,12 @@
+dunst: /home/michael/.config/dunst/dunstrc
+zsh: /home/michael/.config/zsh/zshrc
+bspwm: /home/michael/.config/bspwm/bspwmrc
+ranger: /home/michael/.config/ranger/rc.conf
+sxhkd: /home/michael/.config/sxhkd/sxhkdrc
+discord: /home/michael/.config/terminal-discord/config.json
+rofi: /home/michael/.config/rofi/config.rasi
+qutebrowser: /home/michael/.config/qutebrowser/config.py
+polybar: /home/michael/.config/polybar/config
+nvim: /home/michael/.config/nvim/init.vim
+new: /home/michael/lkjasfj
+demo: /home/michael/lkjasdkljasd

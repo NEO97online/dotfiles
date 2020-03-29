@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Show list of configr-registered configs
+chosen="$(configr list -n | rofi -dmenu -p 'Edit configuration')"
+
+# Exit if nothing was selected
+[ -z "$chosen" ] && exit 0
+
+# Get path to chosen config
+configpath="$(configr get $chosen)"
+
+# Open the config file in the user's editor/terminal
+$TERMINAL -e sh -c "$EDITOR $configpath"

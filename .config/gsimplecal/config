@@ -1,0 +1,5 @@
+mainwindow_position = center
+mainwindow_yoffset = -412
+mainwindow_resizable = 0
+close_on_unfocus = 1
+external_viewer = gnome-calendar

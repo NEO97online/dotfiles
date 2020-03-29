@@ -1,0 +1,20 @@
+#!/bin/sh
+
+audio="audio"
+graphics="graphics"
+network="network"
+
+chosen="$(echo "$audio\n$graphics\n$network" | rofi -dmenu -p "System Settings" -matching fuzzy)"
+
+# Run settings menu based on choice
+case $chosen in
+	$audio)
+		$HOME/.config/rofi/menus/audiomenu
+		;;
+	$graphics)
+		$HOME/.config/rofi/menus/graphicsmenu
+		;;
+	$network)
+		$HOME/.config/rofi/menus/networkmenu
+		;;
+esac

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+remaps &	# run the remaps script for re-mapping keys
+picom -b &	# run picom compositor for transparency/shadows
+dunst &		# dunst for notifications

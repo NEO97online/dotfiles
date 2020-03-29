@@ -1,0 +1,9 @@
+configuration {
+    theme: "~/.cache/wal/colors-rofi-dark.rasi";
+    modi: "run,window";
+    width: 800;
+    lines: 12;
+    show-icons: true;
+    sidebar-mode: true;
+    window-format: "{icon} {name} {title}";
+}
