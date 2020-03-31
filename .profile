@@ -12,7 +12,7 @@
 export TERMINAL=urxvt
 export EDITOR=nvim
 export VISUAL=nvim
-export WEBBROWSER=google-chrome
+export WEBBROWSER=qutebrowser
 export FILEMANAGER=ranger
 
 # Config directories:
