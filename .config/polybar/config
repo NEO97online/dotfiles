@@ -180,8 +180,7 @@
     label-volume =   VOL %{F#fff}%percentage%%%{F-}
     label-muted =  VOL ---
     label-muted-foreground = #66
-
-    ; Right and Middle click (unreleased)
+    
     click-right = pavucontrol &
 
 [module/powermenu]

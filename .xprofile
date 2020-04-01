@@ -1,5 +1,9 @@
 #!/bin/sh
 
-remaps &	# run the remaps script for re-mapping keys
-picom -b &	# run picom compositor for transparency/shadows
+# Set default cursor to pointer
+xsetroot -cursor_name left_ptr
+
+redshift &      # redshift to avoid blinding myself
+remaps &	# remaps script for re-mapping keys
+picom -b &	# picom compositor for transparency/shadows and vsync
 dunst &		# dunst for notifications
