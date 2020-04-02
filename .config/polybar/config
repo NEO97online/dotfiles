@@ -41,6 +41,9 @@
     modules-center = date
     modules-right = xkeyboard wireless-network wired-network battery powermenu
 
+    wm-restack = bspwm
+    override-redirect = true
+
 [bar/bottom]
     bottom = true
     width = 100%
@@ -63,6 +66,9 @@
 
     modules-left = bspwm
     modules-right = volume temperature cpu memory
+    
+    wm-restack = bspwm
+    override-redirect = true
 
 [module/bspwm]
     type = internal/bspwm
