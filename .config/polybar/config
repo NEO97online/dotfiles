@@ -121,7 +121,7 @@
     warn-temperature = 60
     label = ﰕ TEMP %{F#fff}%temperature-c%%{F-}
     label-warn =  TEMP %temperature-c%
-    label-warn-foreground = ${colors.primary}
+    label-warn-foreground = ${colors.color1}
 
 [module/date]
     type = custom/script
