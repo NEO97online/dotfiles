@@ -9,7 +9,7 @@
 #umask 022
 
 # Default programs:
-export TERMINAL=urxvt
+export TERMINAL=st
 export EDITOR=nvim
 export VISUAL=nvim
 export WEBBROWSER=qutebrowser
