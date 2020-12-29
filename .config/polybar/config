@@ -37,7 +37,7 @@
     font-1 = HackNF:size=13;2
     font-2 = M+1MN:size=10;1
 
-    modules-left = rofiwindows rainyday spotify
+    modules-left = rofiwindows rainyday spotify yoinkscreen
     modules-center = date
     modules-right = xkeyboard wireless-network wired-network battery powermenu
 
@@ -47,7 +47,7 @@
 [bar/bottom]
     bottom = true
     width = 100%
-    height = 30
+    height = 38
 
     background = ${colors.background}
     foreground = ${colors.foreground}
@@ -109,6 +109,13 @@
     exec = python ~/.scripts/polybar/spotify_status.py -f '{artist}: {song}'
     format-underline = #1db954
     click-left = xdotool search --class spotify windowactivate
+
+[module/yoinkscreen]
+	type = custom/script
+	interval = 0.25
+	exec = yoinkscreen -s
+	format-foreground = ${colors.color1}
+	click-left = yoinkscreen -k
 
 [module/cpu]
     type = internal/cpu

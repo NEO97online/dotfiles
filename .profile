@@ -9,14 +9,18 @@
 #umask 022
 
 # Default programs:
-export TERMINAL=st
-export EDITOR=nvim
-export VISUAL=nvim
-export WEBBROWSER=qutebrowser
-export FILEMANAGER=ranger
+export TERMINAL="st"
+export EDITOR="nvim"
+export VISUAL="nvim"
+export FILEMANAGER="ranger"
+export BROWSER="brave-browser"
+
+export COLORTERM=truecolor
 
 # Config directories:
 export ZDOTDIR="$HOME/.config/zsh"
+export SSB_HOME="$HOME/.config/zoom"
+export ANDROID_HOME="$HOME/Android/Sdk"
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
@@ -48,3 +52,13 @@ export PATH=$PATH:~/.local/bin
 # Add global npm path
 export PATH=$PATH:~/.npm-global/bin
 
+# Add Android tools
+export PATH=$PATH:$ANDROID_HOME/tools
+
+# Add Golang binaries
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:~/go/bin
+
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+export PATH="$HOME/.cargo/bin:$PATH"

@@ -1,6 +1,6 @@
 configuration {
     theme: "~/.cache/wal/colors-rofi-dark.rasi";
-    modi: "run,window";
+    modi: "drun,run,window";
     width: 800;
     lines: 12;
     show-icons: true;

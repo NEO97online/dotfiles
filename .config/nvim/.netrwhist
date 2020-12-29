@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/michael'
+let g:netrw_dirhist_2='/home/michael/.config'
+let g:netrw_dirhist_3='/home/michael/.config/bspwm'
+let g:netrw_dirhist_4='/home/michael/.config'
+let g:netrw_dirhist_5='/home/michael/.config/Unreal Engine'
+let g:netrw_dirhist_6='/home/michael/.config'

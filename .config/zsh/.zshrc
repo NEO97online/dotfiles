@@ -1,7 +1,16 @@
 # Luke's config for the Zoomer Shell
 
+# Enable colors
 autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
+# Echos the current branch, used for prompt
+git_prompt() {
+  ref=$(git symbolic-ref HEAD 2> /dev/null | cut -d'/' -f3)
+  [ -n "$ref" ] && echo "%{$fg[magenta]%}($ref) "
+}
+
+setopt PROMPT_SUBST
+PROMPT='%B%{$fg[yellow]%}%~ $(git_prompt)%{$fg[blue]%}>%b '
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
@@ -24,6 +33,8 @@ bindkey -v '^?' backward-delete-char
 
 export KEYTIMEOUT=1
 
+default_cursor='\e[3 q'
+
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
@@ -34,21 +45,21 @@ function zle-keymap-select {
        [[ ${KEYMAP} == viins ]] ||
        [[ ${KEYMAP} = '' ]] ||
        [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
+    echo -ne "$default_cursor"
   fi
 }
 zle -N zle-keymap-select
 
 zle-line-init() {
     zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
+    echo -ne "$default_cursor"
 }
 zle -N zle-line-init
 
 # Use beam shape cursor on startup.
-echo -ne '\e[5 q'
+echo -ne "$default_cursor"
 # Use beam shape cursor for each new prompt.
-preexec() { echo -ne '\e[5 q' ;}
+preexec() { echo -ne "$default_cursor" ;}
 
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {

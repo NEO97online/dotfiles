@@ -9,12 +9,12 @@ chosen="$(echo "$audio\n$graphics\n$network" | rofi -dmenu -p "System Settings" 
 # Run settings menu based on choice
 case $chosen in
 	$audio)
-		$HOME/.config/rofi/menus/audiomenu
+		audiomenu
 		;;
 	$graphics)
-		$HOME/.config/rofi/menus/graphicsmenu
+		graphicsmenu
 		;;
 	$network)
-		$HOME/.config/rofi/menus/networkmenu
+		networkmenu
 		;;
 esac

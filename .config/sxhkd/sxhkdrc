@@ -4,7 +4,7 @@
 ###
 
 # reload sxhkd configuration files
-super + Escape
+super + alt + Escape
 	pkill -USR1 -x sxhkd
 
 # open default terminal
@@ -24,18 +24,22 @@ super + alt + L
 	betterlockscreen --lock dimblur
 
 # screenshot of full screen, saved to clipboard
-Print
+hyper + P
 	sleep 0.2; \
 	scrot /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
 
 # screenshot with region, saved to clipboard
-control + Print
+ctrl + alt + shift + super + s
 	sleep 0.2; \
-	scrot -s /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
+	scrot -sf /tmp/screenshot-$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'
 
 # open rofi configr menu
 super + c
 	configrmenu
+
+# grab color
+super + shift + c
+    colorpicker --short --one-shot --preview | xclip -selection clipboard
 
 # open pass menu
 super + p

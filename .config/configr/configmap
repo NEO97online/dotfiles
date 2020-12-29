@@ -1,5 +1,6 @@
+redshift: /home/michael/.config/redshift.conf
 dunst: /home/michael/.config/dunst/dunstrc
-zsh: /home/michael/.config/zsh/zshrc
+zsh: /home/michael/.config/zsh/.zshrc
 bspwm: /home/michael/.config/bspwm/bspwmrc
 ranger: /home/michael/.config/ranger/rc.conf
 sxhkd: /home/michael/.config/sxhkd/sxhkdrc
@@ -8,5 +9,5 @@ rofi: /home/michael/.config/rofi/config.rasi
 qutebrowser: /home/michael/.config/qutebrowser/config.py
 polybar: /home/michael/.config/polybar/config
 nvim: /home/michael/.config/nvim/init.vim
-new: /home/michael/lkjasfj
-demo: /home/michael/lkjasdkljasd
+picom: /home/michael/.config/picom/picom.conf
+alias: /home/michael/.config/aliasrc

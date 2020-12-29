@@ -3,6 +3,11 @@
 # Use neovim for vim if present.
 command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
 
+# Move configuration files
+alias \
+	calcurse="calcurse -D $HOME/.config/calcurse" 
+    #tmux="tmux -f $HOME/.config/tmux/tmux.conf"
+
 # Verbosity that you almost always will want.
 alias \
 	cp="cp -iv" \

@@ -1,0 +1,52 @@
+#!/bin/bash
+
+input="set audio input"
+output="set audio output"
+
+
+inputmenu() {
+	sources="$(pacmd list-sources | grep -e device.description | grep -o '".*"' | sed 's/"//g')"
+	names="$(pacmd list-sources | grep -e 'name:' | grep -o '<.*>' | cut -d "<" -f2 | cut -d ">" -f1)"
+
+	chosen="$(echo "$sources" | rofi -dmenu -format i -p "Choose an input device")"
+
+	IFS=$'\n'
+	sources=($sources)
+	names=($names)
+
+	chosen_name="${names[$chosen]}"
+
+	# Exit if nothing was selected
+	[ -z "$chosen" ] && exit 0
+
+	echo "Set default audio input to ${sources[$chosen]}"
+	notify-send "Set default audio input to ${sources[$chosen]}"
+	pacmd "set-default-source $chosen_name"
+}
+
+outputmenu() {
+	sinks="$(pacmd list-sinks | grep -e device.description | grep -o '".*"' | sed 's/"//g')"
+	names="$(pacmd list-sinks | grep -e 'name:' | grep -o '<.*>' | cut -d "<" -f2 | cut -d ">" -f1)"
+	
+	chosen="$(echo "$sinks" | rofi -dmenu -format i -p "Choose an output device")"
+
+	IFS=$'\n'
+	sinks=($sinks)
+	names=($names)
+
+	chosen_name="${names[$chosen]}"
+
+	# Exit if nothing was selected
+	[ -z "$chosen" ] && exit 0
+	
+	echo "Set default audio output to ${sinks[$chosen]}"
+	notify-send "Set default audio output to ${sinks[$chosen]}"
+	pacmd "set-default-sink $chosen_name" 
+}
+
+chosen="$(echo "$output:$input" | rofi -dmenu -sep : -p "Audio Settings")"
+
+case $chosen in
+	$input) inputmenu;;
+	$output) outputmenu;;
+esac
